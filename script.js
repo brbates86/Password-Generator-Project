@@ -12,13 +12,14 @@ function randomInt(min, max) {
 }
 
 function getRandomItem(list) {
-  return list[randomInt(0, list.length - 1)]
+  return list[randomInt(list.length)]
 }
 
 // Write password to the #password input
 
 function generatePassword() {
 
+  
   var userInput = window.prompt("How long do you want your Password?")
 
   // when the user hits cancel it exits out of prompts//
@@ -35,15 +36,12 @@ if (isNaN(passwordLength)) {
   return
 }
 
-if (passwordLength < 8|| passwordLength > 128) {
-  window.alert("Password must be between 8 and 128 characters")
-  return
-}
 
-var userWantsNumbers = window.confirm("Would you like to include numbers in your password?")
-var userWantsSymbols = window.confirm("Would you like symbols in your Paswword?")
-var userWantsLowercase = window.confirm("Would you like Lowercase in your Password?")
-var userWantsUppercase = window.confirm("Would you like Uppercase letters in your password?")
+
+var userWantsNumbers = window.confirm("Would you like numbers?")
+var userWantsSymbols = window.confirm("Would you like symbols?")
+var userWantsLowercase = window.confirm("Would you like Lowercase?")
+var userWantsUppercase = window.confirm("Would you like Uppercase?")
 
 var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var symbolList = ["!", "@", "#", "$", "%", "&", "*"]
@@ -72,9 +70,7 @@ if (userWantsUppercase === true) {
   optionsCart.push(uppercaseList)
 }
 
-if (optionsCart.lenght === 0) {
-  optionsCart.push(lowercaseList)
-}
+
 
 var generatedPassword = ""
 
@@ -102,3 +98,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
