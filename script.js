@@ -22,10 +22,7 @@ function generatePassword() {
   
   var userInput = window.prompt("How long do you want your Password?")
 
-  // when the user hits cancel it exits out of prompts//
-  if (userInput === null) {
-    return
-  }
+ 
 
   var passwordLength = parseInt(userInput)
 
