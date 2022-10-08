@@ -1,6 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+function randomInt(arrayLength) {
+  return Math.floor(Math.random() * arrayLength)
+}
+
+function getRandomItem(list) {
+  return list[randomInt(list.length)]
+}
+
+
 function randomInt(min, max) {
   if (!max) {
    max = min
@@ -27,11 +37,7 @@ function generatePassword() {
   var passwordLength = parseInt(userInput)
 
 
-// when person doesnt enter a number
-if (isNaN(passwordLength)) {
-  window.alert("Thats not a number!")
-  return
-}
+
 
 
 
@@ -47,29 +53,28 @@ var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
 var optionsCart = []
 
-for (var i = 0; i < lowercaseList.length; i++) {
-  uppercaseList[i] = lowercaseList[i].toUpperCase()
-}
 
-if (userWantsNumbers === true) {
+
+if (userWantsNumbers = true) {
   optionsCart.push(numberList)
 }
 
-if (userWantsSymbols === true) {
+if (userWantsSymbols = true) {
   optionsCart.push(symbolList)
 }
 
-if (userWantsLowercase === true) {
+if (userWantsLowercase = true) {
   optionsCart.push(lowercaseList)
 }
 
-if (userWantsUppercase === true) {
+if (userWantsUppercase = true) {
   optionsCart.push(uppercaseList)
 }
 
 
 
 var generatedPassword = ""
+
 
 for (var i = 0; i < passwordLength; i++) {
   var randomList = getRandomItem(optionsCart)
